@@ -1,18 +1,20 @@
 FROM python:3.9-slim
 
-# Rendszerfüggőségek és FFmpeg telepítése
+# Rendszerkönyvtárak és eszközök telepítése
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     build-essential \
-    libpq-dev \
+    gcc \
+    libffi-dev \
+    libsndfile1 \
     && apt-get clean
 
-# Frissítsük a pip-et
+# PIP frissítése
 RUN pip install --upgrade pip
 
 WORKDIR /app
 
-# Pytorch CPU verzió telepítése
+# Pytorch és egyéb függőségek telepítése
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Python csomagok telepítése
