@@ -23,8 +23,9 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://logowhisperregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a9d1d4869ebe4115854f26e1620d7740 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_bc55ed10840a465aad3abadb78ad631b }}
+        username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+        password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
+
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
