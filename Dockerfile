@@ -26,4 +26,5 @@ COPY . .
 
 EXPOSE 80
 
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+# Debug módban indítjuk gunicornt
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "--log-level", "debug", "--timeout", "120", "--workers", "1", "app:app"]
