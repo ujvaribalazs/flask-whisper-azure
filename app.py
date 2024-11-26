@@ -37,7 +37,7 @@ def upload_file():
         target_sentence = request.form['target_sentence']
         print(f"Target sentence: {target_sentence}")
 
-        upload_folder = "./uploads/"
+        upload_folder = "/tmp/uploads/"
         os.makedirs(upload_folder, exist_ok=True)
         input_filename = os.path.join(upload_folder, "temp_audio.webm")
         output_filename = os.path.join(upload_folder, "temp_audio.wav")
