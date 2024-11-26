@@ -4,3 +4,5 @@ openai-whisper==20231117
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.2
 gunicorn==20.1.0
+numpy==1.24.3
+soundfile==0.12.1
